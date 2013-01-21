@@ -17,7 +17,7 @@
  * under the License.
  */
 
-var serviceURL = "http://localhost/culinaria/";
+var serviceURL = "http://rizkifuad.com/culinaria/";
 var myScroll;
 function loaded() {
     myScroll = new iScroll('wrapper', {
