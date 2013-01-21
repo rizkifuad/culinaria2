@@ -74,9 +74,9 @@ var app = {
 
                 click: function () {
                 if (myScroll.moved) return;  
-                    $('#home').addClass('animated fadeOutLeftBig'); 
+                    $('#home').addClass('animated fadeOutLeftBig').css('display','none'); 
                     $(".backbutton").removeClass("backfrom-home").addClass("backfrom-itemdetail");
-                    $('#itemdetail').addClass('animated fadeOutRightBig'); 
+                    $('#itemdetail').addClass('animated fadeInRightBig').css('display','block'); 
                 }
 
             }, 'li');
@@ -84,8 +84,9 @@ var app = {
             $(".backbutton").click(function(){
                 var nav = $(this).attr("class").split(" ");
                 var page = nav[1].split("-")[1];
-                $("#"+page).removeClass().addClass('page animated fadeOutRightBig');
-                $("#"+page).prev().removeClass().addClass('page animated fadeInLeftBig');
+                $("#"+page).prev().removeClass().addClass('page animated fadeInLeftBig').css('display','block');
+                $("#"+page).removeClass().css('display','none');
+                
                 $(".backbutton").removeClass("backfrom-"+page).addClass("backfrom-"+$("#"+page).prev().attr('id'))
                 return false;
             });
